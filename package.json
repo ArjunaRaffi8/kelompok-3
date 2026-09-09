@@ -9,14 +9,23 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "cloudinary": "^2.11.0",
+    "dotenv": "^17.4.2",
+    "drizzle-kit": "^0.31.10",
+    "drizzle-orm": "^0.45.2",
+    "jose": "^6.2.12",
+    "mysql2": "^3.24.4",
     "next": "16.3.4",
     "react": "19.2.8",
-    "react-dom": "19.2.8"
+    "react-dom": "19.2.8",
+    "server-only": "^0.0.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@types/node": "^26.5.0",
     "eslint": "^9",
     "eslint-config-next": "16.3.4",
-    "tailwindcss": "^4"
+    "tailwindcss": "^4",
+    "typescript": "^6.0.3"
   }
 }
