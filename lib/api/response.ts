@@ -1,34 +1,31 @@
 import { NextResponse } from "next/server";
 
-export function ok(data: unknown, status = 200) {
-  return NextResponse.json(data, { status });
-}
-
-export function badRequest(message: string) {
-  return NextResponse.json(
-    { message },
-    { status: 400 }
-  );
+export function ok<T>(data: T, status = 200) {
+  return NextResponse.json({ success: true, data }, { status });
 }
 
 export function unauthorized(message = "Unauthorized") {
-  return NextResponse.json(
-    { message },
-    { status: 401 }
-  );
+  return NextResponse.json({ success: false, message }, { status: 401 });
 }
 
-export async function handleRoute(
-  handler: () => Promise<Response>
-) {
+export function badRequest(message = "Bad Request") {
+  return NextResponse.json({ success: false, message }, { status: 400 });
+}
+
+export function serverError(message = "Terjadi kesalahan server") {
+  return NextResponse.json({ success: false, message }, { status: 500 });
+}
+
+export async function handleRoute(fn: () => Promise<Response>) {
   try {
-    return await handler();
+    return await fn();
   } catch (error) {
     console.error(error);
 
-    return NextResponse.json(
-      { message: "Internal server error" },
-      { status: 500 }
-    );
+    if (error instanceof Error && error.name === "ZodError") {
+      return badRequest("Data tidak valid");
+    }
+
+    return serverError();
   }
 }
