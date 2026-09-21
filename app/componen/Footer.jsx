@@ -1,348 +1,229 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 
 export default function Footer() {
   return (
     <footer
-      style={{
-        backgroundColor: "#092d4d",
-        color: "#ffffff",
-        marginTop: 0,
-      }}
+      className="bg-[#0b2545] text-white
+      py-9 px-5 border-t-2 border-[#d9a900]"
     >
-      {/* ================= FOOTER CONTENT ================= */}
+
       <div
-        style={{
-          maxWidth: "1200px",
-          margin: "0 auto",
-          padding: "45px 40px 35px",
-          display: "grid",
-          gridTemplateColumns: "2fr 1fr 1fr 1fr",
-          gap: "50px",
-          boxSizing: "border-box",
-        }}
+        className="max-w-6xl mx-auto
+        grid grid-cols-2 md:grid-cols-4 gap-6
+        text-[7px] md:text-[10px]"
       >
-        {/* BRAND */}
+
+        {/* ================= KOLOM 1 ================= */}
         <div>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "12px",
-              marginBottom: "15px",
-            }}
-          >
-            <Image
+
+          <div className="flex items-center gap-2 mb-3">
+
+            <img
               src="/image/homepage/logo.jpeg"
-              alt="SMK Taruna Bhakti"
-              width={50}
-              height={50}
-              style={{
-                objectFit: "contain",
-              }}
+              alt="Logo"
+              className="w-7 h-7 object-contain"
             />
 
-            <h2
-              style={{
-                margin: 0,
-                fontFamily: "Georgia, serif",
-                fontSize: "18px",
-                color: "#ffffff",
-              }}
-            >
+            <span className="font-bold text-[9px] md:text-xs">
               SMK TARUNA BHAKTI
-            </h2>
+            </span>
+
           </div>
 
-          <p
-            style={{
-              margin: "0 0 22px",
-              color: "#cbd5df",
-              fontSize: "11px",
-              lineHeight: "1.7",
-            }}
-          >
-            Membangun generasi unggul yang berkarakter kuat,
-            cerdas secara akademis, dan siap bersaing dalam
-            skala global dengan tetap menjunjung nilai luhur bangsa.
+          <p className="text-slate-400 leading-relaxed mb-3">
+            Membangun generasi unggul yang berkarakter kuat, cerdas
+            secara akademis, dan siap bersaing dalam skala global dengan
+            tetap menjunjung nilai-nilai luhur bangsa.
           </p>
 
-          <h4
-            style={{
-              margin: "0 0 8px",
-              color: "#d4a900",
-              fontSize: "10px",
-              letterSpacing: "1px",
-            }}
-          >
+          <h5 className="font-bold mb-1 text-amber-400">
             ALAMAT UTAMA
-          </h4>
+          </h5>
 
-          <p
-            style={{
-              margin: 0,
-              color: "#cbd5df",
-              fontSize: "10px",
-              lineHeight: "1.6",
-            }}
-          >
-            Jalan Raya Pekapuran, RT 02/RW 07, Kelurahan Curug,
-            Kecamatan Cimanggis, Kota Depok, Jawa Barat
+          <p className="text-slate-400 leading-relaxed">
+            Jalan Raya Pekapuran, RT 02/RW 07, Kelurahan
+            Curug, Kecamatan Cimanggis, Kota Depok,
+            Jawa Barat
           </p>
+
         </div>
 
-        {/* TAUTAN CEPAT */}
+
+        {/* ================= KOLOM 2 ================= */}
         <div>
-          <h4
-            style={{
-              margin: "0 0 18px",
-              color: "#d4a900",
-              fontSize: "10px",
-              letterSpacing: "1px",
-            }}
-          >
+
+          <h5 className="font-bold text-amber-400 mb-3">
             TAUTAN CEPAT
-          </h4>
+          </h5>
 
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: "11px",
-            }}
-          >
-            <Link
-              href="/"
-              style={{
-                color: "#cbd5df",
-                textDecoration: "none",
-                fontSize: "10px",
-              }}
-            >
-              Beranda
-            </Link>
+          <ul className="space-y-2 text-slate-300">
 
-            <Link
-              href="/tentang-kami"
-              style={{
-                color: "#cbd5df",
-                textDecoration: "none",
-                fontSize: "10px",
-              }}
-            >
-              Tentang
-            </Link>
+            <li>
+              <Link
+                href="/tentang-kami"
+                className="hover:text-amber-400"
+              >
+                Profil Sekolah
+              </Link>
+            </li>
 
-            <Link
-              href="/sejarah"
-              style={{
-                color: "#cbd5df",
-                textDecoration: "none",
-                fontSize: "10px",
-              }}
-            >
-              Sejarah
-            </Link>
+            <li>
+              <Link
+                href="/kurikulum"
+                className="hover:text-amber-400"
+              >
+                Kurikulum
+              </Link>
+            </li>
 
-            <Link
-              href="/ekstrakulikuler"
-              style={{
-                color: "#cbd5df",
-                textDecoration: "none",
-                fontSize: "10px",
-              }}
-            >
-              Ekstrakurikuler
-            </Link>
+            <li>
+              <Link
+                href="/fasilitas"
+                className="hover:text-amber-400"
+              >
+                Fasilitas Belajar
+              </Link>
+            </li>
 
-            <Link
-              href="/kontak"
-              style={{
-                color: "#cbd5df",
-                textDecoration: "none",
-                fontSize: "10px",
-              }}
-            >
-              Kontak
-            </Link>
-          </div>
+            <li>
+              <Link
+                href="/ekstrakulikuler"
+                className="hover:text-amber-400"
+              >
+                Ekstrakurikuler
+              </Link>
+            </li>
+
+            <li>
+              <Link
+                href="/ppdb"
+                className="hover:text-amber-400"
+              >
+                Informasi PPDB
+              </Link>
+            </li>
+
+          </ul>
+
         </div>
 
-        {/* JAM OPERASIONAL */}
-        <div>
-          <h4
-            style={{
-              margin: "0 0 18px",
-              color: "#d4a900",
-              fontSize: "10px",
-              letterSpacing: "1px",
-            }}
-          >
-            JAM OPERASIONAL
-          </h4>
 
-          <p
-            style={{
-              margin: "0 0 10px",
-              color: "#cbd5df",
-              fontSize: "10px",
-            }}
-          >
+        {/* ================= KOLOM 3 ================= */}
+        <div>
+
+          <h5 className="font-bold text-amber-400 mb-3">
+            JAM OPERASIONAL
+          </h5>
+
+          <p className="text-slate-300 mb-2">
             Senin - Sabtu: 07:00 - 16:00
           </p>
 
-          <p
-            style={{
-              margin: "0 0 22px",
-              color: "#cbd5df",
-              fontSize: "10px",
-            }}
-          >
+          <p className="text-slate-300 mb-3">
             Minggu: Tutup
           </p>
 
-          <h4
-            style={{
-              margin: "0 0 8px",
-              color: "#d4a900",
-              fontSize: "10px",
-              letterSpacing: "1px",
-            }}
-          >
+          <h5 className="font-bold text-amber-400 mb-1">
             LAYANAN TELEPON
-          </h4>
+          </h5>
 
-          <strong
-            style={{
-              color: "#ffffff",
-              fontSize: "12px",
-            }}
-          >
+          <p className="text-white font-bold">
             (021) 555-1234
-          </strong>
-        </div>
-
-        {/* HUBUNGI KAMI */}
-        <div>
-          <h4
-            style={{
-              margin: "0 0 18px",
-              color: "#d4a900",
-              fontSize: "10px",
-              letterSpacing: "1px",
-            }}
-          >
-            HUBUNGI KAMI
-          </h4>
-
-          <p
-            style={{
-              margin: "0 0 20px",
-              color: "#cbd5df",
-              fontSize: "10px",
-            }}
-          >
-            info@SMKTARUNABHAKTI.sch.id
           </p>
 
-          <div
-            style={{
-              display: "flex",
-              gap: "9px",
-            }}
-          >
+        </div>
+
+
+        {/* ================= KOLOM 4 ================= */}
+        <div>
+
+          <h5 className="font-bold text-amber-400 mb-3">
+            HUBUNGI KAMI
+          </h5>
+
+          <p className="text-slate-300 mb-3">
+            info@smktarunabhakti.sch.id
+          </p>
+
+          <div className="flex gap-2">
+
             <span
-              style={{
-                width: "28px",
-                height: "28px",
-                border: "1px solid #718096",
-                borderRadius: "50%",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                color: "#d4a900",
-                fontSize: "12px",
-              }}
+              className="w-6 h-6 rounded-full
+              bg-slate-800
+              flex items-center justify-center
+              text-slate-300
+              hover:bg-amber-400
+              hover:text-[#0b2545]
+              cursor-pointer transition"
             >
               ◎
             </span>
 
             <span
-              style={{
-                width: "28px",
-                height: "28px",
-                border: "1px solid #718096",
-                borderRadius: "50%",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                color: "#d4a900",
-                fontSize: "11px",
-              }}
+              className="w-6 h-6 rounded-full
+              bg-slate-800
+              flex items-center justify-center
+              text-slate-300
+              hover:bg-amber-400
+              hover:text-[#0b2545]
+              cursor-pointer transition"
             >
               ▶
             </span>
 
             <span
-              style={{
-                width: "28px",
-                height: "28px",
-                border: "1px solid #718096",
-                borderRadius: "50%",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                color: "#d4a900",
-                fontSize: "12px",
-              }}
+              className="w-6 h-6 rounded-full
+              bg-slate-800
+              flex items-center justify-center
+              text-slate-300
+              hover:bg-amber-400
+              hover:text-[#0b2545]
+              cursor-pointer transition"
             >
               f
             </span>
 
             <span
-              style={{
-                width: "28px",
-                height: "28px",
-                border: "1px solid #718096",
-                borderRadius: "50%",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                color: "#d4a900",
-                fontSize: "11px",
-              }}
+              className="w-6 h-6 rounded-full
+              bg-slate-800
+              flex items-center justify-center
+              text-slate-300
+              hover:bg-amber-400
+              hover:text-[#0b2545]
+              cursor-pointer transition"
             >
               𝕏
             </span>
+
           </div>
+
         </div>
+
       </div>
 
-      {/* ================= FOOTER BOTTOM ================= */}
+
+      {/* ================= COPYRIGHT ================= */}
       <div
-        style={{
-          borderTop: "1px solid rgba(255,255,255,0.15)",
-          maxWidth: "1200px",
-          margin: "0 auto",
-          padding: "16px 40px",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          color: "#9eafbd",
-          fontSize: "9px",
-          boxSizing: "border-box",
-        }}
+        className="max-w-6xl mx-auto mt-7 pt-4
+        border-t border-slate-800
+        flex flex-col md:flex-row
+        justify-between items-center
+        gap-2 text-[6px] md:text-[8px]
+        text-slate-500"
       >
-        <span>
-          © 2026 SMK TARUNA BHAKTI DEPOK. All rights reserved.
-        </span>
 
-        <span>
+        <p>
+          © 2026 SMK TARUNA BHAKTI DEPOK. All rights reserved.
+        </p>
+
+        <p>
           Akreditasi A Unggul (98.4)
-        </span>
+        </p>
+
       </div>
+
     </footer>
   );
 }

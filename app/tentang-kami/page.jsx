@@ -180,25 +180,23 @@ export default function TentangKami() {
               </Misi>
 
               <Misi nomor="2">
-                Melaksanakan kurikulum melalui pembelajaran dan
-                penilaian berbasis kompetensi, berbasis wirausaha,
-                berwawasan lingkungan dan berlandaskan kejujuran
+                Melaksanakan kurikulum melalui pembelajaran dan penilaian berbasis kompetensi, 
+                Berbasis wirausaha, berwawasan lingkungan.dan berlandaskan kejujuran
               </Misi>
 
               <Misi nomor="3">
-                Meningkatkan kualitas sumber daya manusia melalui
-                sertifikasi kompetensi tingkat nasional dan
-                internasional
+                Meningkatkan kualitas sumber daya manusia melalui sertifikasi 
+                Kompetensi Tingkat Nasional dan Internasional
               </Misi>
 
               <Misi nomor="4">
-                Mengembangkan potensi peserta didik melalui kegiatan
-                minat dan bakat serta pembinaan kedisiplinan
+                Mengembangkan potensi peserta didik melalui kegiatan 
+                Minat dan Bakat dan pembinaan kedisiplinan
               </Misi>
 
               <Misi nomor="5">
-                Menerapkan layanan prima dalam pengelolaan sekolah
-                melalui Sistem Manajemen Mutu
+                Menerapkan layanan prima dalam pengelolaan sekolah 
+                melalui Sistem Manajeman Mutu
               </Misi>
             </div>
           </div>
@@ -253,8 +251,8 @@ export default function TentangKami() {
                 fontSize: "10px",
               }}
             >
-              Empat pilar utama kepribadian warga sekolah dalam
-              berinteraksi sosial dan menuntut ilmu.
+              Empat pilar utama kepribadian warga SMK Taruna Bhakti 
+              dalam berinteraksi sosial dan menuntut ilmu.
             </p>
           </div>
 
@@ -278,12 +276,12 @@ export default function TentangKami() {
 
             <Nilai
               title="Kolaborasi"
-              text="Membangun sinergi harmonis antar siswa, guru, staf, orang tua, dan masyarakat luas guna sukses bersama."
+              text="Membangun sinergi harmonis antar siswa, guru, staff, orang tua, dan masyarakat luas guna sukses bersama."
             />
 
             <Nilai
               title="Keunggulan"
-              text="Pantang menyerah demi mencapai level kualitas terbaik dalam seluruh proses belajar, mengajar, dan berkarya nyata."
+              text="Pantang menyerah demi mencapai level kualitas terbaik dalam seluruh proses belajar, mengajar, dan berkarya nyata.rah demi mencapai level kualitas terbaik dalam seluruh proses belajar, mengajar, dan berkarya nyata."
             />
           </div>
         </div>
@@ -337,8 +335,8 @@ export default function TentangKami() {
                 margin: 0,
               }}
             >
-              Pimpinan profesional berdedikasi tinggi yang menjadi
-              pilar utama pendidikan SMK Taruna Bhakti.
+              Pimpinan profesional berdedikasi tinggi yang mengawal 
+              perjalanan mutu pendidikan SMK Taruna Bhakti Depok.
             </p>
           </div>
 
@@ -351,32 +349,32 @@ export default function TentangKami() {
           >
             <Guru
               nama="Agung Setiawan, ST"
-              jabatan="Kepala Program Teknik"
+              jabatan="Kepala Program TKJ"
             />
 
             <Guru
               nama="Sinta Nur Alifah, S.IKom"
-              jabatan="Kepala Program"
+              jabatan="Kejuruan Animasi"
             />
 
             <Guru
               nama="Nur Syafitri, S.IKom"
-              jabatan="Kepala Program"
+              jabatan="Kepala Program PSPT"
             />
 
             <Guru
-              nama="Mirasna, S.Pd"
-              jabatan="Kepala Program"
+              nama="Miranda, S.Pd"
+              jabatan="Kepala Program RPL"
             />
 
             <Guru
               nama="Dhanura Wahyu Nurhidayati, A.Md"
-              jabatan="Kepala Program"
+              jabatan="Kepala Program TEI"
             />
 
             <Guru
-              nama="Sinta Nur Alifah, S.IKom"
-              jabatan="Kepala Program"
+              nama="Yulfani Wulan Maulita, S.Ds"
+              jabatan="Kepala Program DKV"
             />
           </div>
         </div>
@@ -550,8 +548,9 @@ function Guru({ nama, jabatan }) {
             margin: 0,
           }}
         >
-          Tenaga pendidik SMK Taruna Bhakti Depok yang berperan
-          dalam membimbing dan mengembangkan potensi peserta didik.
+          Agung Setiawan, S.T. (Pak Agung) tercatat mengajar di SMK Taruna Bhakti (TB) 
+          Depok setidaknya sejak tahun 2018, yang berarti hingga tahun 2026 
+          ini beliau sudah mengajar selama kurang lebih 8 tahun.
         </p>
       </div>
     </div>
