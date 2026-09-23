@@ -4,6 +4,36 @@ import Navbar from "../componen/Navbar";
 import Footer from "../componen/Footer";
 
 export default function Kontak() {
+
+const handleSubmit = (e) => {
+  e.preventDefault();
+
+  const form = new FormData(e.target);
+
+  const dataPesan = {
+    nama: form.get("nama"),
+    email: form.get("email"),
+    subjek: form.get("subjek"),
+    pesan: form.get("pesan"),
+    tanggal: new Date().toLocaleString("id-ID"),
+  };
+
+  const pesanLama = JSON.parse(
+    localStorage.getItem("pesanKontak") || "[]"
+  );
+
+  pesanLama.push(dataPesan);
+
+  localStorage.setItem(
+    "pesanKontak",
+    JSON.stringify(pesanLama)
+  );
+
+  alert("Pesan berhasil disimpan!");
+
+  e.target.reset();
+};
+
   return (
     <div className="min-h-screen bg-white text-slate-800 font-sans">
 
@@ -12,7 +42,7 @@ export default function Kontak() {
 
 
       {/* ================= HERO ================= */}
-      <section className="relative w-full h-[190px] md:h-[250px] overflow-hidden bg-slate-900">
+      <section className="relative w-full h-[190px] md:h-[280px] overflow-hidden bg-slate-900">
 
         <div className="absolute inset-0">
           <img
@@ -70,7 +100,7 @@ export default function Kontak() {
             </p>
 
 
-            {/* ALAMAT */}
+            {/* ================= ALAMAT ================= */}
             <div
               className="bg-white border border-slate-200
               rounded-lg p-4 mb-3 flex items-center gap-4"
@@ -84,6 +114,7 @@ export default function Kontak() {
               </div>
 
               <div>
+
                 <p
                   className="text-[6px] md:text-[8px]
                   font-bold text-amber-600 mb-1"
@@ -95,12 +126,13 @@ export default function Kontak() {
                   Jalan Raya Pekapuran, RT 02/RW 07, Kelurahan Curug,
                   Kecamatan Cimanggis, Kota Depok, Jawa Barat
                 </p>
+
               </div>
 
             </div>
 
 
-            {/* TELEPON */}
+            {/* ================= TELEPON ================= */}
             <div
               className="bg-white border border-slate-200
               rounded-lg p-4 mb-3 flex items-center gap-4"
@@ -114,6 +146,7 @@ export default function Kontak() {
               </div>
 
               <div>
+
                 <p
                   className="text-[6px] md:text-[8px]
                   font-bold text-amber-600 mb-1"
@@ -124,12 +157,13 @@ export default function Kontak() {
                 <p className="text-[8px] md:text-[10px] text-slate-700">
                   (021) 555-1234 / (021) 555-5678
                 </p>
+
               </div>
 
             </div>
 
 
-            {/* EMAIL */}
+            {/* ================= EMAIL ================= */}
             <div
               className="bg-white border border-slate-200
               rounded-lg p-4 mb-3 flex items-center gap-4"
@@ -143,6 +177,7 @@ export default function Kontak() {
               </div>
 
               <div>
+
                 <p
                   className="text-[6px] md:text-[8px]
                   font-bold text-amber-600 mb-1"
@@ -153,12 +188,13 @@ export default function Kontak() {
                 <p className="text-[8px] md:text-[10px] text-slate-700">
                   info@sman1nusantara.sch.id
                 </p>
+
               </div>
 
             </div>
 
 
-            {/* JAM OPERASIONAL */}
+            {/* ================= JAM OPERASIONAL ================= */}
             <div
               className="bg-white border border-slate-200
               rounded-lg p-4 flex items-center gap-4"
@@ -172,6 +208,7 @@ export default function Kontak() {
               </div>
 
               <div>
+
                 <p
                   className="text-[6px] md:text-[8px]
                   font-bold text-amber-600 mb-1"
@@ -182,6 +219,7 @@ export default function Kontak() {
                 <p className="text-[8px] md:text-[10px] text-slate-700">
                   Senin - Jumat, 07:00 - 16:00 WIB
                 </p>
+
               </div>
 
             </div>
@@ -190,7 +228,8 @@ export default function Kontak() {
 
 
           {/* ================= FORM ================= */}
-          <div
+          <form
+            onSubmit={handleSubmit}
             className="bg-white border border-slate-200
             rounded-xl p-6 md:p-8 shadow-sm"
           >
@@ -211,7 +250,7 @@ export default function Kontak() {
             </p>
 
 
-            {/* NAMA */}
+            {/* ================= NAMA ================= */}
             <div className="mb-4">
 
               <label
@@ -223,7 +262,9 @@ export default function Kontak() {
 
               <input
                 type="text"
+                name="nama"
                 placeholder="Contoh: Budi Gunawan"
+                required
                 className="w-full h-[36px] md:h-[40px]
                 rounded border border-slate-200
                 bg-slate-50 px-3
@@ -234,7 +275,7 @@ export default function Kontak() {
             </div>
 
 
-            {/* EMAIL */}
+            {/* ================= EMAIL ================= */}
             <div className="mb-4">
 
               <label
@@ -246,7 +287,9 @@ export default function Kontak() {
 
               <input
                 type="email"
+                name="email"
                 placeholder="Contoh: budi@email.com"
+                required
                 className="w-full h-[36px] md:h-[40px]
                 rounded border border-slate-200
                 bg-slate-50 px-3
@@ -257,7 +300,7 @@ export default function Kontak() {
             </div>
 
 
-            {/* SUBJEK */}
+            {/* ================= SUBJEK ================= */}
             <div className="mb-4">
 
               <label
@@ -269,7 +312,9 @@ export default function Kontak() {
 
               <input
                 type="text"
+                name="subjek"
                 placeholder="Contoh: Pertanyaan PPDB 2026"
+                required
                 className="w-full h-[36px] md:h-[40px]
                 rounded border border-slate-200
                 bg-slate-50 px-3
@@ -280,7 +325,7 @@ export default function Kontak() {
             </div>
 
 
-            {/* PESAN */}
+            {/* ================= PESAN ================= */}
             <div className="mb-5">
 
               <label
@@ -291,7 +336,9 @@ export default function Kontak() {
               </label>
 
               <textarea
+                name="pesan"
                 placeholder="Ketikkan detail pertanyaan atau masukan Anda di sini..."
+                required
                 className="w-full h-[75px] md:h-[90px]
                 rounded border border-slate-200
                 bg-slate-50 px-3 py-3
@@ -303,9 +350,9 @@ export default function Kontak() {
             </div>
 
 
-            {/* BUTTON */}
+            {/* ================= BUTTON ================= */}
             <button
-              type="button"
+              type="submit"
               className="w-full h-[36px] md:h-[40px]
               rounded bg-[#0b2545]
               border border-amber-500
@@ -316,7 +363,7 @@ export default function Kontak() {
               KIRIM PESAN
             </button>
 
-          </div>
+          </form>
 
         </div>
       </section>

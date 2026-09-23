@@ -18,9 +18,9 @@ export default function TentangKami() {
       {/* ================= HERO ================= */}
       <section
         style={{
-          height: "170px",
+          height: "250px",
           position: "relative",
-          backgroundImage: 'url("/image/homepage/gedung.png")',
+          backgroundImage: 'url("/image/homepage/gedung.jpeg")',
           backgroundSize: "cover",
           backgroundPosition: "center",
           display: "flex",
@@ -180,22 +180,23 @@ export default function TentangKami() {
               </Misi>
 
               <Misi nomor="2">
-                Melaksanakan kurikulum melalui pembelajaran dan penilaian berbasis kompetensi, 
-                Berbasis wirausaha, berwawasan lingkungan.dan berlandaskan kejujuran
+                Melaksanakan kurikulum melalui pembelajaran dan penilaian
+                berbasis kompetensi, Berbasis wirausaha, berwawasan
+                lingkungan.dan berlandaskan kejujuran
               </Misi>
 
               <Misi nomor="3">
-                Meningkatkan kualitas sumber daya manusia melalui sertifikasi 
+                Meningkatkan kualitas sumber daya manusia melalui sertifikasi
                 Kompetensi Tingkat Nasional dan Internasional
               </Misi>
 
               <Misi nomor="4">
-                Mengembangkan potensi peserta didik melalui kegiatan 
+                Mengembangkan potensi peserta didik melalui kegiatan
                 Minat dan Bakat dan pembinaan kedisiplinan
               </Misi>
 
               <Misi nomor="5">
-                Menerapkan layanan prima dalam pengelolaan sekolah 
+                Menerapkan layanan prima dalam pengelolaan sekolah
                 melalui Sistem Manajeman Mutu
               </Misi>
             </div>
@@ -251,7 +252,7 @@ export default function TentangKami() {
                 fontSize: "10px",
               }}
             >
-              Empat pilar utama kepribadian warga SMK Taruna Bhakti 
+              Empat pilar utama kepribadian warga SMK Taruna Bhakti
               dalam berinteraksi sosial dan menuntut ilmu.
             </p>
           </div>
@@ -291,7 +292,7 @@ export default function TentangKami() {
       <section
         style={{
           backgroundColor: "#ffffff",
-          padding: "55px 20px",
+          padding: "20px 20px 55px",
         }}
       >
         <div
@@ -309,7 +310,7 @@ export default function TentangKami() {
             <div
               style={{
                 color: "#c49a16",
-                fontSize: "9px",
+                fontSize: "7px",
                 fontWeight: "bold",
                 letterSpacing: "1px",
               }}
@@ -322,7 +323,7 @@ export default function TentangKami() {
                 margin: "10px 0",
                 color: "#0b2948",
                 fontFamily: "Georgia, serif",
-                fontSize: "29px",
+                fontSize: "23px",
               }}
             >
               GURU KEJURUAN
@@ -331,50 +332,64 @@ export default function TentangKami() {
             <p
               style={{
                 color: "#718096",
-                fontSize: "10px",
+                fontSize: "8px",
                 margin: 0,
               }}
             >
-              Pimpinan profesional berdedikasi tinggi yang mengawal 
-              perjalanan mutu pendidikan SMK Taruna Bhakti Depok.
+              Pimpinan profesional berdedikasi tinggi yang mengawal
+              perjalanan mutu pendidikan SMK Taruna Bhakti Depok
             </p>
           </div>
 
+          {/* GRID GURU */}
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(3, 1fr)",
+              gridTemplateColumns: "repeat(3, 280px)",
               gap: "18px",
+              justifyContent: "center",
             }}
           >
             <Guru
               nama="Agung Setiawan, ST"
               jabatan="Kepala Program TKJ"
+              foto="/image/tentang-kami/agung.jpeg"
+              warna="#dce7ea"
             />
 
             <Guru
               nama="Sinta Nur Alifah, S.IKom"
               jabatan="Kejuruan Animasi"
+              foto="/image/tentang-kami/sinta.jpeg"
+              warna="#55b5f5"
             />
 
             <Guru
               nama="Nur Syafitri, S.IKom"
               jabatan="Kepala Program PSPT"
+              foto="/image/tentang-kami/nur.jpeg"
+              warna="#55b5f5"
             />
 
             <Guru
               nama="Miranda, S.Pd"
               jabatan="Kepala Program RPL"
+              foto="/image/tentang-kami/miranda.jpeg"
+              warna="#e2ddd7"
             />
 
             <Guru
-              nama="Dhanura Wahyu Nurhidayati, A.Md"
+              nama="Dharma Wahyu Nurhidayati, A.Md"
               jabatan="Kepala Program TEI"
+              foto="/image/tentang-kami/dharma.jpeg"
+              warna="#55b5f5"
             />
 
             <Guru
               nama="Yulfani Wulan Maulita, S.Ds"
               jabatan="Kepala Program DKV"
+              foto="/image/tentang-kami/yulfani.jpeg"
+              warna="#55b5f5"
             />
           </div>
         </div>
@@ -385,7 +400,6 @@ export default function TentangKami() {
     </main>
   );
 }
-
 
 /* ================= COMPONENT MISI ================= */
 
@@ -429,7 +443,6 @@ function Misi({ nomor, children }) {
     </div>
   );
 }
-
 
 /* ================= COMPONENT NILAI ================= */
 
@@ -487,42 +500,53 @@ function Nilai({ title, text }) {
   );
 }
 
-
 /* ================= COMPONENT GURU ================= */
 
-function Guru({ nama, jabatan }) {
+function Guru({ nama, jabatan, foto, warna }) {
   return (
     <div
       style={{
+        width: "280px",
         border: "1px solid #dfe5eb",
-        borderRadius: "7px",
+        borderRadius: "9px",
         overflow: "hidden",
-        backgroundColor: "#ffffff",
+        backgroundColor: "#d9d9d9",
       }}
     >
+      {/* FOTO */}
       <div
         style={{
-          height: "150px",
-          backgroundColor: "#092d4d",
+          width: "100%",
+          backgroundColor: warna,
           display: "flex",
-          alignItems: "center",
           justifyContent: "center",
-          color: "#ffffff",
-          fontSize: "10px",
+          alignItems: "flex-start",
         }}
       >
-        Foto Guru
+        <img
+          src={foto}
+          alt={nama}
+          style={{
+            width: "75%",
+            height: "auto",
+            display: "block",
+          }}
+        />
       </div>
 
+      {/* INFORMASI */}
       <div
         style={{
-          padding: "15px",
+          padding: "10px",
+          minHeight: "105px",
+          boxSizing: "border-box",
+          backgroundColor: "#d9d9d9",
         }}
       >
         <span
           style={{
             color: "#c49a16",
-            fontSize: "8px",
+            fontSize: "7px",
             fontWeight: "bold",
           }}
         >
@@ -533,8 +557,8 @@ function Guru({ nama, jabatan }) {
           style={{
             color: "#092d4d",
             fontFamily: "Georgia, serif",
-            fontSize: "13px",
-            margin: "7px 0",
+            fontSize: "12px",
+            margin: "5px 0",
           }}
         >
           {nama}
@@ -543,14 +567,14 @@ function Guru({ nama, jabatan }) {
         <p
           style={{
             color: "#718096",
-            fontSize: "8px",
+            fontSize: "7px",
             lineHeight: "1.5",
             margin: 0,
           }}
         >
-          Agung Setiawan, S.T. (Pak Agung) tercatat mengajar di SMK Taruna Bhakti (TB) 
-          Depok setidaknya sejak tahun 2018, yang berarti hingga tahun 2026 
-          ini beliau sudah mengajar selama kurang lebih 8 tahun.
+          {nama} tercatat mengajar di SMK Taruna Bhakti (TB) Depok.
+          Berdedikasi dalam memberikan pembelajaran dan membimbing peserta
+          didik sesuai dengan bidang keahliannya.
         </p>
       </div>
     </div>

@@ -105,14 +105,17 @@ export default function Navbar() {
             gap: "36px",
           }}
         >
+          {/* BERANDA */}
           <Link
             href="/"
             style={pathname === "/" ? activeStyle : menuStyle}
           >
             Beranda
+
             {pathname === "/" && <span style={garisAktif} />}
           </Link>
 
+          {/* TENTANG */}
           <Link
             href="/tentang-kami"
             style={
@@ -122,11 +125,13 @@ export default function Navbar() {
             }
           >
             Tentang
+
             {pathname === "/tentang-kami" && (
               <span style={garisAktif} />
             )}
           </Link>
 
+          {/* SEJARAH */}
           <Link
             href="/sejarah"
             style={
@@ -136,25 +141,21 @@ export default function Navbar() {
             }
           >
             Sejarah
+
             {pathname === "/sejarah" && (
               <span style={garisAktif} />
             )}
           </Link>
 
+          {/* EKSTRAKURIKULER */}
           <Link
-            href="/ekstrakulikuler"
-            style={
-              pathname === "/ekstrakulikuler"
-                ? activeStyle
-                : menuStyle
-            }
+            href="/#ekstrakurikuler"
+            style={menuStyle}
           >
             Ekstrakurikuler
-            {pathname === "/ekstrakulikuler" && (
-              <span style={garisAktif} />
-            )}
           </Link>
 
+          {/* KONTAK */}
           <Link
             href="/kontak"
             style={
@@ -164,6 +165,7 @@ export default function Navbar() {
             }
           >
             Kontak
+
             {pathname === "/kontak" && (
               <span style={garisAktif} />
             )}
