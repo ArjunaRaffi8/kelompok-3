@@ -129,7 +129,7 @@ Nama        : Peran
 Arjuna      : Project Manager (PM)
 Kesya       : Frontend
 Akram       : UI/UX Designer & QE
-Nadia  : Backend
+Nadia       : Backend
 
 ------------------------------------------------------------------------
 7. LISENSI
