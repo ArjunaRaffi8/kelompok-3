@@ -17,10 +17,10 @@ Website ini berfungsi sebagai media informasi digital resmi sekolah yang
 menyajikan:
 
 - Beranda / Home     : Banner utama, nilai keunggulan sekolah, dan informasi umum.
-- Tentang Kami &     : Visi, misi, serta kilas balik perjalanan SMK Taruna
-  Sejarah              Bhakti Depok.
+- Tentang Kami       : Visi, misi, profil sekolah, serta sejarah SMK Taruna Bhakti Depok.
 - Ekstrakurikuler    : Informasi kegiatan dan wadah minat bakat siswa.
 - Form Kontak        : Sarana komunikasi interaktif untuk pengunjung dan calon pendaftar.
+- Informasi & Berita : Integrasi berita dan pengumuman sekolah yang dinamis dari API.
 
 ------------------------------------------------------------------------
 2. TECH STACK
@@ -51,7 +51,7 @@ web_profile_sekolah/
 │   ├── layout.js            # Main Layout (Navbar, Footer wrapper)
 │   └── page.js              # Entry point / Halaman Beranda
 │
-├── componen/                # Reusable UI components (Header, Footer, Card, dll.)
+├── components/              # Reusable UI components (Header, Footer, Card, dll.)
 ├── config/                  # Konfigurasi variabel / API endpoint
 ├── lib/                     # Utilities & Helper functions
 ├── public/                  # Asset statis (Logo, Gambar, Ikon)
@@ -90,35 +90,55 @@ Pastikan kamu sudah berada di direktori web_profile_sekolah, lalu jalankan:
 Buka http://localhost:3000 di browser kamu.
 
 ------------------------------------------------------------------------
-5. GIT WORKFLOW
+5. GIT WORKFLOW & PANDUAN COMMIT DETAILED
 ------------------------------------------------------------------------
 
-Branch Model:
+Model Cabang (Branching Model):
 ------------------------------------------------------------------------
-master / main : Production-ready code. Hanya PM yang diperbolehkan merge.
-develop       : Branch integrasi utama tempat penggabungan seluruh fitur.
+main          : Codebase siap rilis (Production). Hanya PM yang diperbolehkan merge.
+develop       : Branch integrasi utama seluruh fitur tim.
 feature/*     : Branch pengerjaan tugas/fitur spesifik (dibuat dari develop).
 
---- Aturan Workflow ---
-1. Pengembangan Fitur:
-   Buat branch baru dari develop:
+--- ATURAN KERJA & CARA PULL/MERGE KE DEVELOP ---
+
+1. MEMBUAT BRANCH FITUR BARU:
+   Pastikan selalu menarik update terbaru dari `develop` sebelum mulai:
      git checkout develop
      git pull origin develop
      git checkout -b feature/nama-fitur
 
-2. Commit Message:
-   Mengikuti konvensi pesan commit standar:
-     feat     : penambahan fitur baru
-     fix      : perbaikan bug/error
-     style    : penataan UI / Tailwind CSS
-     docs     : pembaruan dokumentasi README
-     refactor : penataan ulang struktur kode
+2. MENYIMPAN PERUBAHAN (COMMIT):
+   Simpan pekerjaan secara berkala dengan konvensi commit:
+     git status
+     git add .
+     git commit -m "<prefix>: <deskripsi singkat>"
 
-3. Penggabungan ke Develop:
+   Panduan Prefix Commit:
+     feat     : Penambahan fitur atau halaman baru
+     fix      : Perbaikan bug / error pada kode
+     style    : Penyesuaian tampilan, layout, atau Tailwind CSS
+     docs     : Pembaruan dokumentasi atau README
+     refactor : Penataan ulang struktur kode tanpa mengubah fungsionalitas
+
+3. MENGGABUNGKAN (PULL & MERGE) KE BRANCH DEVELOP:
+   Setelah fitur selesai diuji di lokal, gabungkan kembali ke develop:
      git checkout develop
      git pull origin develop
      git merge --no-ff feature/nama-fitur
      git push origin develop
+
+4. MEMBERSIHKAN BRANCH (OPSIONAL):
+   Hapus branch fitur lokal setelah berhasil di-merge ke develop:
+     git branch -d feature/nama-fitur
+
+5. PENANGANAN MERGE CONFLICT:
+   Jika terjadi konflik saat merge ke develop:
+   a. Buka file yang bermasalah di editor (VS Code).
+   b. Pilih kode yang benar (Accept Current / Accept Incoming).
+   c. Simpan file, lalu jalankan:
+      git add .
+      git commit -m "fix: menyelesaikan merge conflict pada <nama-fitur>"
+      git push origin develop
 
 ------------------------------------------------------------------------
 6. TEAM (KELOMPOK 3)
