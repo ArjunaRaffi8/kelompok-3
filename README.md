@@ -1,36 +1,139 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+========================================================================
+WEB PROFILE SEKOLAH - SMK TARUNA BHAKTI DEPOK
+========================================================================
 
-## Getting Started
+Landing page dan platform informasi resmi untuk SMK Taruna Bhakti Depok,
+dibuat modern menggunakan Next.js App Router, Tailwind CSS, serta integrasi
+REST API backend berbasis Express.js dan Drizzle ORM.
 
-First, run the development server:
+Status : In Development
+Stack  : Next.js | Tailwind CSS | Express.js | Drizzle ORM
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+------------------------------------------------------------------------
+1. TENTANG PROJECT
+------------------------------------------------------------------------
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Website ini berfungsi sebagai media informasi digital resmi sekolah yang
+menyajikan:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- Beranda / Home     : Banner utama, nilai keunggulan sekolah, dan informasi umum.
+- Tentang Kami &     : Visi, misi, serta kilas balik perjalanan SMK Taruna
+  Sejarah              Bhakti Depok.
+- Ekstrakurikuler    : Informasi kegiatan dan wadah minat bakat siswa.
+- Form Kontak        : Sarana komunikasi interaktif untuk pengunjung dan calon pendaftar.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+------------------------------------------------------------------------
+2. TECH STACK
+------------------------------------------------------------------------
 
-## Learn More
+Layer          : Teknologi
+------------------------------------------------------------------------
+Frontend       : Next.js (App Router), React
+Backend API    : Express.js, TypeScript
+Styling        : Tailwind CSS, PostCSS
+Database & ORM : Drizzle ORM, Supabase / MySQL
+Asset Storage  : Cloudinary / Multer
+Deployment     : Vercel
 
-To learn more about Next.js, take a look at the following resources:
+------------------------------------------------------------------------
+3. STRUKTUR PROJECT
+------------------------------------------------------------------------
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+web_profile_sekolah/
+├── app/
+│   ├── api/                 # API Routes (Next.js)
+│   ├── ekstrakurikuler/     # Halaman Ekstrakurikuler
+│   ├── kontak/              # Halaman Form Kontak
+│   ├── sejarah/             # Halaman Sejarah Sekolah
+│   ├── tentang-kami/        # Halaman Profil Sekolah
+│   ├── favicon.ico
+│   ├── globals.css          # Setup Tailwind & Custom Styling
+│   ├── layout.js            # Main Layout (Navbar, Footer wrapper)
+│   └── page.js              # Entry point / Halaman Beranda
+│
+├── componen/                # Reusable UI components (Header, Footer, Card, dll.)
+├── config/                  # Konfigurasi variabel / API endpoint
+├── lib/                     # Utilities & Helper functions
+├── public/                  # Asset statis (Logo, Gambar, Ikon)
+│   └── image/
+├── drizzle.config.ts        # Konfigurasi Drizzle ORM
+└── package.json
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+------------------------------------------------------------------------
+4. GETTING STARTED
+------------------------------------------------------------------------
 
-## Deploy on Vercel
+--- Prasyarat ---
+- Node.js >= 18.x
+- npm / yarn / pnpm
+- Service Backend Express.js / Database Supabase yang sudah aktif.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+--- Instalasi ---
+1. Clone repositori ini:
+   git clone <URL_REPOSITORY_GITHUB_KAMU>
+   cd web_profile_sekolah
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+2. Install dependency:
+   npm install
+
+--- Environment Variables ---
+Buat file .env.local di root folder web_profile_sekolah:
+
+   DATABASE_URL=your_database_connection_string
+   NEXT_PUBLIC_API_URL=http://localhost:5000
+
+--- Menjalankan Secara Lokal ---
+Pastikan kamu sudah berada di direktori web_profile_sekolah, lalu jalankan:
+
+   npm run dev
+
+Buka http://localhost:3000 di browser kamu.
+
+------------------------------------------------------------------------
+5. GIT WORKFLOW
+------------------------------------------------------------------------
+
+Branch Model:
+------------------------------------------------------------------------
+master / main : Production-ready code. Hanya PM yang diperbolehkan merge.
+develop       : Branch integrasi utama tempat penggabungan seluruh fitur.
+feature/*     : Branch pengerjaan tugas/fitur spesifik (dibuat dari develop).
+
+--- Aturan Workflow ---
+1. Pengembangan Fitur:
+   Buat branch baru dari develop:
+     git checkout develop
+     git pull origin develop
+     git checkout -b feature/nama-fitur
+
+2. Commit Message:
+   Mengikuti konvensi pesan commit standar:
+     feat     : penambahan fitur baru
+     fix      : perbaikan bug/error
+     style    : penataan UI / Tailwind CSS
+     docs     : pembaruan dokumentasi README
+     refactor : penataan ulang struktur kode
+
+3. Penggabungan ke Develop:
+     git checkout develop
+     git pull origin develop
+     git merge --no-ff feature/nama-fitur
+     git push origin develop
+
+------------------------------------------------------------------------
+6. TEAM (KELOMPOK 3)
+------------------------------------------------------------------------
+
+Nama        : Peran
+------------------------------------------------------------------------
+Arjuna      : Project Manager (PM)
+Kesya       : Frontend
+Akram       : UI/UX Designer & QE
+Nadia  : Backend
+
+------------------------------------------------------------------------
+7. LISENSI
+------------------------------------------------------------------------
+
+Proyek internal sekolah — SMK Taruna Bhakti Depok.
+========================================================================
